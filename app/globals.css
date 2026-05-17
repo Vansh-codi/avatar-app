@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════
+   AvatarAI · GLOBALS · v4 — "Neon Atelier"
+   Dark:  near-black velvet + electric gold
+   Light: deep indigo ink on warm ivory — NOT white/grey
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══ DARK TOKENS ══════════════════════════════════════════ */
+:root {
+  --bg:           #07070c;
+  --bg-mid:       #0c0c14;
+  --surface:      #10101a;
+  --surface2:     #16162a;
+  --surface3:     #1e1e34;
+  --glass:        rgba(10,10,18,0.82);
+
+  --border:       rgba(255,255,255,0.055);
+  --border-hi:    rgba(255,255,255,0.11);
+  --border-gold:  rgba(230,180,50,0.32);
+
+  --text:         #f2f0ff;
+  --text-2:       rgba(242,240,255,0.55);
+  --text-3:       rgba(242,240,255,0.24);
+  --text-4:       rgba(242,240,255,0.09);
+
+  /* Palette */
+  --gold:         #e6b432;
+  --gold-lt:      #f5d06a;
+  --gold-dim:     rgba(230,180,50,0.13);
+  --gold-glow:    rgba(230,180,50,0.5);
+
+  --sky:          #00d4ff;
+  --sky-dim:      rgba(0,212,255,0.1);
+  --sky-glow:     rgba(0,212,255,0.5);
+
+  --violet:       #9b5de5;
+  --violet-dim:   rgba(155,93,229,0.12);
+  --violet-glow:  rgba(155,93,229,0.5);
+
+  --acid:         #39ff14;
+  --acid-dim:     rgba(57,255,20,0.09);
+  --acid-glow:    rgba(57,255,20,0.5);
+
+  --coral:        #ff5757;
+  --coral-glow:   rgba(255,87,87,0.5);
+
+  --f-display:    'Bebas Neue', sans-serif;
+  --f-body:       'DM Sans', sans-serif;
+  --f-mono:       'IBM Plex Mono', monospace;
+
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+}
+
+/* ═══ LIGHT TOKENS — deep indigo ink on warm ivory ═════════
+   NOT white. NOT grey. Rich antique paper + deep navy ink.
+   ════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  --bg:           #12003a;   /* deep navy-indigo — the main canvas */
+  --bg-mid:       #1a1852;
+  --surface:      #1f1d5e;
+  --surface2:     #252370;
+  --surface3:     #2d2b84;
+  --glass:        rgba(18,16,58,0.88);
+
+  --border:       rgba(255,255,255,0.08);
+  --border-hi:    rgba(255,255,255,0.16);
+  --border-gold:  rgba(255,210,80,0.35);
+
+  --text:         #faf8ff;
+  --text-2:       rgba(250,248,255,0.6);
+  --text-3:       rgba(250,248,255,0.28);
+  --text-4:       rgba(250,248,255,0.1);
+
+  /* Lighter, more vibrant accents for the indigo canvas */
+  --gold:         #ffd24d;
+  --gold-lt:      #ffe088;
+  --gold-dim:     rgba(255,210,77,0.14);
+  --gold-glow:    rgba(255,210,77,0.55);
+
+  --sky:          #38e8ff;
+  --sky-dim:      rgba(56,232,255,0.12);
+  --sky-glow:     rgba(56,232,255,0.55);
+
+  --violet:       #c084fc;
+  --violet-dim:   rgba(192,132,252,0.14);
+  --violet-glow:  rgba(192,132,252,0.55);
+
+  --acid:         #4ade80;
+  --acid-dim:     rgba(74,222,128,0.12);
+  --acid-glow:    rgba(74,222,128,0.55);
+
+  --coral:        #fb7185;
+  --coral-glow:   rgba(251,113,133,0.55);
+}
+
+/* ═══ RESET ════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ SCROLLBAR ════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 99px; }
+
+/* ═══ RANGE ════════════════════════════════════════════════ */
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  background: var(--surface3); border-radius: 99px; height: 3px; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--gold); cursor: pointer;
+  box-shadow: 0 0 0 3px var(--gold-dim), 0 0 14px var(--gold-glow);
+  transition: transform 0.15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.3); }
+
+/* ═══ COLOR ════════════════════════════════════════════════ */
+input[type="color"] {
+  border: none; border-radius: 50%;
+  width: 24px; height: 24px; cursor: pointer; padding: 0; overflow: hidden;
+  box-shadow: 0 0 0 1px var(--border-hi);
+}
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 50%; }
+
+/* ═══ GLASS ════════════════════════════════════════════════ */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--border);
+}
+
+/* ═══ NOISE ════════════════════════════════════════════════ */
+.noise::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none; z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025; mix-blend-mode: overlay;
+}
+
+/* ═══ ANIMATIONS ═══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slideRight {
+  from { opacity:0; transform:translateX(-18px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes runRight {
+  from { transform: translateX(-120px); }
+  to   { transform: translateX(calc(100vw + 120px)); }
+}
+@keyframes runLeft {
+  from { transform: translateX(calc(100vw + 120px)) scaleX(-1); }
+  to   { transform: translateX(-120px) scaleX(-1); }
+}
+@keyframes bobble {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+@keyframes legCycle {
+  0%,100% { transform: rotate(-18deg); }
+  50%      { transform: rotate(18deg); }
+}
+@keyframes armSwing {
+  0%,100% { transform: rotate(22deg); }
+  50%      { transform: rotate(-22deg); }
+}
+@keyframes tailWag {
+  0%,100% { transform: rotate(-20deg) translateY(2px); }
+  50%      { transform: rotate(20deg) translateY(-2px); }
+}
+@keyframes pulseGold {
+  0%,100% { opacity:1; }
+  50%      { opacity:0.4; }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes scaleIn {
+  from { opacity:0; transform: scale(0.88); }
+  to   { opacity:1; transform: scale(1); }
+}
+
+.fade-up  { animation: fadeUp     0.5s cubic-bezier(0.22,1,0.36,1) both; }
+.slide-r  { animation: slideRight 0.45s cubic-bezier(0.22,1,0.36,1) both; }
+.blink    { animation: pulseGold  2s ease-in-out infinite; }
+.spin     { animation: spinSlow   1s linear infinite; }
+.scale-in { animation: scaleIn    0.35s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* ═══ CHIP ══════════════════════════════════════════════════ */
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 3px;
+  font-family: var(--f-mono); font-size: 9px;
+  font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--gold-dim); color: var(--gold);
+  border: 1px solid var(--border-gold);
+}
+
+/* ═══ CARD — used by Export & Saved panels ══════════════════ */
+.panel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.panel-card:hover {
+  border-color: var(--border-hi);
+  background: var(--surface2);
+}
+
+/* ═══ SECTION LABEL ═════════════════════════════════════════ */
+.section-label {
+  font-family: var(--f-mono);
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ═══ HYDRATION GUARD ══════════════════════════════════════ */
+[data-hydrated=false] { visibility: hidden; }
