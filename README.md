@@ -1,9 +1,16 @@
 # AvatarAI — Real-Time 3D Avatar Generator
+## Live Demo
+
+https://facceavatar-app.vercel.app
 
 A production-ready full-stack web app that generates and animates a personalized 3D avatar using live webcam face and body tracking.
 
 ![AvatarAI Preview](public/preview.png)
-
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Three.js](https://img.shields.io/badge/Three.js-WebGL-black)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
 ---
 
 ##  Features
@@ -124,7 +131,7 @@ avatar-app/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/avatar-ai.git
+git clone https://github.com/Vansh-codi/avatar-app.git
 cd avatar-ai
 
 # Install all dependencies
@@ -489,3 +496,19 @@ MIT — free to use, modify, and distribute.
 - [Zustand](https://zustand-demo.pmnd.rs) — State management
 - [jose](https://github.com/panva/jose) — JWT library
 - [bcryptjs](https://github.com/dcodeIO/bcrypt.js) — Password hashing
+  
+--------------------------------------------------------------------------------------------------
+- ## Future Improvements
+
+- AI-generated avatars
+- Voice-controlled animation
+- Multiplayer avatar rooms
+- VR support
+- Full body mocap
+
+- 
+- ## Author
+
+Built by Vansh Jain
+GitHub:
+https://github.com/Vansh-codi
