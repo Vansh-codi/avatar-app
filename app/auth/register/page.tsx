@@ -104,7 +104,7 @@ export default function RegisterPage() {
       }
 
       setUser(data.user);
-      router.push('/dashboard');
+      router.push('/auth/login');
     } catch {
       setError('Network error. Please try again.');
     } finally {
