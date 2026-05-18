@@ -1,4 +1,4 @@
-# 🎭 AvatarAI — Real-Time 3D Avatar Generator
+# AvatarAI — Real-Time 3D Avatar Generator
 
 A production-ready full-stack web app that generates and animates a personalized 3D avatar using live webcam face and body tracking.
 
@@ -6,7 +6,7 @@ A production-ready full-stack web app that generates and animates a personalized
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Tech |
 |---|---|
@@ -30,7 +30,7 @@ A production-ready full-stack web app that generates and animates a personalized
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -92,7 +92,7 @@ avatar-app/
 ├── lib/
 │   ├── auth.ts                 # JWT sign/verify helpers
 │   ├── db.ts                   # Prisma singleton
-│   ├── landmarkProcessor.ts    # 🧠 ML → bone transforms
+│   ├── landmarkProcessor.ts    # ML → bone transforms
 │   ├── rateLimit.ts            # Sliding window rate limiter
 │   └── store.ts                # Zustand global store
 ├── prisma/
@@ -226,7 +226,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🧠 ML Architecture: How Landmark Mapping Works
+## ML Architecture: How Landmark Mapping Works
 
 ```
 Webcam Frame (640×480)
@@ -345,7 +345,7 @@ git push origin v1.0.0
 
 ---
 
-## 🌐 Vercel Deployment
+## Vercel Deployment
 
 ### 1. Push to GitHub (see above)
 
@@ -420,11 +420,11 @@ Subsequent deploys happen automatically on every `git push` to `main`.
 
 These features are partially implemented or ready to add:
 
-### Emotion Detection ✅ (Implemented)
+### Emotion Detection  (Implemented)
 Already working via `detectEmotion()` in `lib/landmarkProcessor.ts`. 
 Emotion badge shows in the 3D viewport. Extend by adding emotion-triggered animations.
 
-### Gesture Controls ✅ (Implemented)
+### Gesture Controls  (Implemented)
 `detectGesture()` recognizes "wave" and "victory". 
 Add more gestures by analyzing joint angles between wrist/elbow/shoulder.
 
@@ -437,7 +437,7 @@ recognition.onresult = (e) => {
 };
 ```
 
-### Multiplayer Avatar Room 🔧 (Add via Socket.IO)
+### Multiplayer Avatar Room  (Add via Socket.IO)
 ```bash
 npm install socket.io socket.io-client
 # Create: app/api/socket/route.ts
@@ -447,7 +447,7 @@ npm install socket.io socket.io-client
 
 ---
 
-## 🛠 Troubleshooting
+##  Troubleshooting
 
 **MediaPipe not loading:**
 ```
